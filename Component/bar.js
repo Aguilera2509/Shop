@@ -28,15 +28,15 @@ export function Navbar({ setSearch }){
                 </div>
 
                 <div className="btn-group" role="group" aria-label="Basic outlined example">
+                    <Link className={user !== undefined ? 'btn btn-outline-danger' : 'btn btn-outline-primary'} href="/" role="button">Home</Link>
                     {user === undefined &&
-                    <Link className="btn btn-outline-primary" href="/api/auth/login" role="button">
-                        Login
-                    </Link>
+                        <Link className="btn btn-outline-primary" href="/api/auth/login" role="button">
+                            Login
+                        </Link>
                     }
 
                     {user !== undefined &&
                         <>
-                            <Link className="btn btn-outline-danger" href="/" role="button">Home</Link>
                             <Link className="btn btn-outline-danger" href="/profile" role="button">{user.name}</Link>
                             <Link className="btn btn-outline-danger" href="/shoppingCart" role="button">My Shopping Cart</Link>
                             <Link className="btn btn-outline-danger" href="/api/auth/logout" role="button">Logout</Link>
