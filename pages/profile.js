@@ -20,12 +20,6 @@ export default function Profile() {
       const json = await response.json()
       const productsUserPay = json.data.filter(el => el["billing_details"].email === user.email)
 
-      const responseSeeProducts = await Promise.all(productsUserPay.map(pd => fetch(`https://api.stripe.com/v1/products/search?query=name:\'${pd.description.substring(3)}\'`, FETCHOPTIONS)))
-      const jsonSeeProducts = await Promise.all(responseSeeProducts.map(js => js.json()))
-
-      console.log(productsUserPay)
-      console.log(jsonSeeProducts)
-
       setProductsPay(productsUserPay)
       setLoading(false)
     }
