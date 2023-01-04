@@ -75,6 +75,9 @@ export function ProductsModal({ extraData, data }){
             {save &&
                 <SaveNotice />
             }
+            <button type="button" className="btn btn-primary" onClick={()=>{
+               window.open(`/${extraData.idProduct}`, "_blank")
+            }}>Product's Chat</button>
             <ul className="list-group list-group-flush">
                 <li className="list-group-item list-group-item-dark">Prices: {numberWithSpaces(extraData.unitAmount)} $$</li>
             </ul>
