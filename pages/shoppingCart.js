@@ -32,6 +32,9 @@ export default function ShoppingCart() {
         const dataVArray = Object.values(data)
         getProducts(dataVArray)
       })
+    }else{
+      setLoading(false)
+      setSizeData(false)
     }
   }
 
