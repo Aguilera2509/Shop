@@ -23,6 +23,8 @@ export default function Chat(){
     const db = getDatabase(app)
     let showMess = null
 
+    console.log(router)
+
     if(seeUserMessages[0]){
         showMess = Object.values(seeUserMessages[0])
     }
@@ -63,7 +65,7 @@ export default function Chat(){
     }
 
     useEffect(()=>{
-        if(router.asPath !== "/[...chat]"){
+        if(router.asPath !== "/[chat]"){
             watchMessages()
         }
     }, [router.asPath])
